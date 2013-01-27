@@ -1,5 +1,5 @@
 # use https://github.com/resmo/git-ftp for keeping ftp up to date
-#----------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # add the following to .git/config, set right user and password
 #
 #[git-ftp "pcaps"]
@@ -14,10 +14,10 @@
 #	url = sftp://netsniff-ng.org
 #	syncroot = examples
 #	curl-insecure = 0
-#----------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # use it with
 #
-# only for first initialize, not use if ftp server is already prepared
+# only for first initialize, don't use it if ftp server is already prepared
 # git ftp init -vv -s examples
 # git ftp init -vv -s pcaps
 #
@@ -25,5 +25,7 @@
 #
 # git ftp push -vv -s examples
 # git ftp push -vv -s pcaps
+#
+# don't delete files on ftp server manually!!!
 
 /*README
