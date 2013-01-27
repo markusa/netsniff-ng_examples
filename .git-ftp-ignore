@@ -25,4 +25,4 @@
 # git ftp push -vv -s examples
 # git ftp push -vv -s pcaps
 
-*README
+/*README
