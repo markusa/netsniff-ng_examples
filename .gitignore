@@ -23,13 +23,6 @@
 *.la
 *.a
 
-# Build and testing folders
-src/build/
-src/test/fuzzing/
-
-# Ignore if someone adapts Makefile
-src/Makefile
-
 # Other documentation ignores
 *.md
 *.ps
