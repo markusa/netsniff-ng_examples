@@ -1,0 +1,28 @@
+#--------------------------------
+# add the following to .git/config, set right user and password
+#
+#[git-ftp "pcaps"]
+#	user = uname
+#	password = pass
+#	url = sftp://netsniff-ng.org
+#	syncroot = pcaps
+#	curl-insecure = 0
+#[git-ftp "examples"]
+#	user = uname
+#	password = pass
+#	url = sftp://netsniff-ng.org
+#	syncroot = examples
+#	curl-insecure = 0
+#--------------------------------
+# use it with
+#
+# only for first initialize, not use if ftp server is already prepared
+# git ftp init -vv -s examples
+# git ftp init -vv -s pcaps
+#
+# then
+#
+# git ftp push -vv -s examples
+# git ftp push -vv -s pcaps
+
+*README

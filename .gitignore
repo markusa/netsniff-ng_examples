@@ -34,3 +34,4 @@
 
 # Excluded from ignorance
 !.gitignore
+!.git-ftp-ignore
