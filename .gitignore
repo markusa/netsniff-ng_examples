@@ -1,0 +1,43 @@
+# Editor crap (emacs, vim, ...)
+*.swp
+*.orig
+\#*\#
+.\#*
+.*.sw[a-z]
+*.un~
+
+# Hidden files, general things
+.*
+*~
+
+# Compiled object files
+*.slo
+*.lo
+*.o
+
+# Compiled dynamic libraries
+*.so
+
+# Compiled static libraries
+*.lai
+*.la
+*.a
+
+# Build and testing folders
+src/build/
+src/test/fuzzing/
+
+# Ignore if someone adapts Makefile
+src/Makefile
+
+# Other documentation ignores
+*.md
+*.ps
+
+# Compressed archives
+*.tar.bz2
+*.tar.bz
+*.tar.xz
+
+# Excluded from ignorance
+!.gitignore
