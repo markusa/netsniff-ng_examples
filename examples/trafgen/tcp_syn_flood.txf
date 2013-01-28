@@ -1,0 +1,52 @@
+/* Note: dynamic elements make trafgen slower! */
+
+#define ETH_P_IP	0x0800
+
+#define SYN		(1 << 1)
+#define ECN		(1 << 6)
+
+{
+  /* MAC Destination */
+  fill(0xff, 6),
+  /* MAC Source */
+  0x00, 0x02, 0xb3, drnd(3),
+  /* IPv4 Protocol */
+  c16(ETH_P_IP),
+  /* IPv4 Version, IHL, TOS */
+  0b01000101, 0,
+  /* IPv4 Total Len */
+  c16(59),
+  /* IPv4 Ident */
+  drnd(2),
+  /* IPv4 Flags, Frag Off */
+  0b01000000, 0,
+  /* IPv4 TTL */
+  64,
+  /* Proto TCP */
+  0x06,
+  /* IPv4 Checksum (IP header from, to) */
+  csumip(14, 33),
+  /* Source IP */
+  drnd(4),
+  /* Dest IP */
+  drnd(4),
+  /* TCP Source Port */
+  drnd(2),
+  /* TCP Dest Port */
+  c16(80),
+  /* TCP Sequence Number */
+  drnd(4),
+  /* TCP Ackn. Number */
+  c32(0),
+  /* TCP Header length + TCP SYN/ECN Flag */
+  c16((0x8 << 12) | SYN | ECN)
+  /* Window Size */
+  c16(16),
+  /* TCP Checksum (offset IP, offset TCP) */
+  csumtcp(14, 34),
+  /* TCP Options */
+  0x00, 0x00, 0x01, 0x01, 0x08, 0x0a, 0x06,
+  0x91, 0x68, 0x7d, 0x06, 0x91, 0x68, 0x6f,
+  /* Data blob */
+  "gotcha!",
+}
